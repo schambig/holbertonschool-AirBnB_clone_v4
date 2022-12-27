@@ -1,15 +1,15 @@
 $(function () {
-  const AmenitiesChecked = {};
+  const amenitiesChecked = {};
   $(document).on('change', "input[type='checkbox']", function () {
     if (this.checked) {
-      AmenitiesChecked[$(this).data('id')] = $(this).data('name');
+      amenitiesChecked[$(this).data('id')] = $(this).data('name');
     } else {
-      delete AmenitiesChecked[$(this).data('id')];
+      delete amenitiesChecked[$(this).data('id')];
     }
-    const Objs = Object.values(AmenitiesChecked);
-    console.log(Object.values(AmenitiesChecked));
-    if (Objs) {
-      $('.amenities > h4').text(Object.values(AmenitiesChecked).join(', '));
+    const objs = Object.values(amenitiesChecked);
+    console.log(Object.values(amenitiesChecked));
+    if (objs) {
+      $('.amenities > h4').text(Object.values(amenitiesChecked).join(', '));
     } else {
       $('.amenities > h4').html('&nbsp;');
     }
