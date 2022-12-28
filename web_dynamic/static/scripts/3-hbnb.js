@@ -16,7 +16,7 @@ $(function () {
     console.log(amenitiesChecked);
   });
 
-  $.getJSON('http://${window.location.hostname}:5001/api/v1/status/', (data) => {
+  $.getJSON('http://127.0.0.1:5001/api/v1/status/', (data) => {
     if (data.status === 'OK') {
       $('#api_status').addClass('available');
     } else {
@@ -25,7 +25,7 @@ $(function () {
   });
 
   const users = {};
-  $.getJSON(`http://${window.location.hostname}:5001/api/v1/users`, (data) => {
+  $.getJSON('http://127.0.0.1:5001/api/v1/users', (data) => {
     for (const usr of data) {
       users[usr.id] = usr.first_name + ' ' + usr.last_name;
       console.log(users);
@@ -35,14 +35,14 @@ $(function () {
   $.ajax({
     type: 'POST',
     data: JSON.stringify({}),
-    url: `http://${window.location.hostname}:5001/api/v1/places_search`,
+    url: 'http://127.0.0.1:5001/api/v1/places_search',
     contentType: 'application/json',
-    success: data => {
-      console.log("I AM DATA");
+    success: function (data) {
+      console.log('I AM DATA');
       console.log(data);
       for (const place of data) {
         const template = `<article>
-      <div class="title">
+      <div class="title_box">
         <h2>${place.name}</h2>
         <div class="price_by_night">
     $${place.price_by_night}
@@ -77,4 +77,5 @@ $(function () {
         $('.places').append(template);
       }
     }
+  });
 });
