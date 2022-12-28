@@ -51,18 +51,18 @@ $(function () {
         <div class="information">
           <div class="max_guest">
           <div class="image_guest"></div>
-    <br />
+    <br>
     ${place.max_guest} Guests
         </div>
           <div class="number_rooms">
           <div class="img_room"></div>
     <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
-    <br />
+    <br>
     ${place.number_rooms} Bedrooms
         </div>
         <div class="number_bathrooms">
         <div class="img_bathrooms"></div>
-    <br />
+    <br>
     ${place.number_bathrooms} Bathroom
         </div>
       </div>
